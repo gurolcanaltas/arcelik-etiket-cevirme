@@ -1,0 +1,21 @@
+﻿{
+  "source": "1773580553942-ornekk.pdf",
+  "replacements": [],
+  "templateTransforms": [
+    {
+      "pageNumber": 1,
+      "type": "normal-to-parolu",
+      "values": {
+        "mainPrice": "48.059",
+        "paroluPrice": "19.429",
+        "date": "01.01.2026",
+        "productionPlace": "Turkiye",
+        "rows": [
+          { "label": "1+2", "pesinat": "16.019", "taksit": "2x16.020", "toplam": "48.059" },
+          { "label": "1+4", "pesinat": "10.226", "taksit": "4x10.226", "toplam": "51.130" },
+          { "label": "1+8", "pesinat": "6.623", "taksit": "8x6.623", "toplam": "59.607" }
+        ]
+      }
+    }
+  ]
+}

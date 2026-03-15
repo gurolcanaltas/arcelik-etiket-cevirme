@@ -1,0 +1,17 @@
+{
+  "name": "pdf-editor-app",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "fontkit": "^2.0.4",
+    "multer": "^2.0.2",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^5.4.394"
+  }
+}

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF Veri Duzenleyici</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">PDF Inceleme ve Duzenleme</p>
+        <h1>Etiket PDF'lerinde sadece ihtiyac duyulan alanlari duzenle.</h1>
+        <p class="lede">
+          Dosya yuklendikten sonra sayfalar sadece makine ismi, makine turu ve fiyat alanlariyla gruplanir.
+          Duzenlemeler PDF metin katmanina dogrudan uygulanir.
+        </p>
+        <p class="lede">
+          Template hazirlamak istersen <a href="/template-inspector.html">Template Inspector</a> aracini kullanabilirsin.
+        </p>
+      </section>
+
+      <section class="panel upload-panel">
+        <form id="upload-form" class="upload-form">
+          <label class="upload-dropzone" for="pdf-input">
+            <input id="pdf-input" name="pdf" type="file" accept="application/pdf" required />
+            <span>PDF dosyasini sec</span>
+            <small>Tek bir PDF yukleyin</small>
+          </label>
+          <button type="submit">PDF'i incele</button>
+        </form>
+        <p id="status" class="status"></p>
+      </section>
+
+      <section id="editor-panel" class="panel editor-panel hidden">
+        <div class="panel-header">
+          <div>
+            <p class="section-title">Duzenleme Alani</p>
+            <h2 id="result-title"></h2>
+          </div>
+          <button id="download-btn" class="secondary-btn">Guncellenmis PDF'i indir</button>
+        </div>
+        <div id="summary" class="summary"></div>
+        <div id="pages" class="pages"></div>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
+

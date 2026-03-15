@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template Inspector</title>
+    <link rel="stylesheet" href="/template-inspector.css" />
+  </head>
+  <body>
+    <main class="inspector-shell">
+      <section class="inspector-hero">
+        <p class="eyebrow">Template Inspector</p>
+        <h1>Fiyat blogunu ciz, JSON'u otomatik al.</h1>
+        <p class="lede">
+          Once fiyat blogunun tamamini sec. Sonra icindeki alanlari kutu veya cizgi olarak isaretle. Arac koordinatlari
+          otomatik olarak oranlayip JSON uretir.
+        </p>
+      </section>
+
+      <section class="panel inspector-layout">
+        <aside class="inspector-sidebar">
+          <div class="sidebar-section">
+            <h2>1. Gorsel</h2>
+            <label class="file-picker">
+              <input id="image-input" type="file" accept="image/*" />
+              <span>Gorsel sec</span>
+            </label>
+            <p class="helper">PDF'ten ekran goruntusu alabilir veya once PNG/JPG olarak kaydedebilirsin.</p>
+          </div>
+
+          <div class="sidebar-section">
+            <h2>2. Template</h2>
+            <label class="form-row">
+              <span>Template ID</span>
+              <input id="template-id" type="text" value="price-block-v1" />
+            </label>
+            <label class="form-row">
+              <span>Variant</span>
+              <select id="template-variant">
+                <option value="normal">normal</option>
+                <option value="parolu">parolu</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="sidebar-section">
+            <h2>3. Cizim Modu</h2>
+            <div class="mode-actions">
+              <button id="set-frame-btn" type="button">Fiyat Blogu Sec</button>
+              <button id="draw-box-btn" type="button" class="secondary-btn">Kutu Alan Ekle</button>
+              <button id="draw-line-btn" type="button" class="secondary-btn">Cizgi Ekle</button>
+            </div>
+            <p id="mode-status" class="helper">Ilk adim olarak fiyat blogunun tamamini sec.</p>
+          </div>
+
+          <div class="sidebar-section">
+            <h2>4. Alan Bilgisi</h2>
+            <label class="form-row">
+              <span>Tip</span>
+              <select id="element-type">
+                <option value="field">field</option>
+                <option value="text">text</option>
+                <option value="rect">rect</option>
+                <option value="image">image</option>
+                <option value="line">line</option>
+              </select>
+            </label>
+            <label class="form-row">
+              <span>ID</span>
+              <input id="element-id" type="text" placeholder="main_price_top" />
+            </label>
+            <label class="form-row">
+              <span>Field Key</span>
+              <input id="element-field-key" type="text" placeholder="main_price" />
+            </label>
+            <label class="form-row">
+              <span>Metin</span>
+              <input id="element-text" type="text" placeholder="PESINAT" />
+            </label>
+            <p class="helper">field icin fieldKey, text icin Metin, rect icin sadece ID yeterli.</p>
+          </div>
+
+          <div class="sidebar-section">
+            <h2>5. Alan Listesi</h2>
+            <div id="element-list" class="element-list">
+              <p class="helper">Henuz alan eklenmedi.</p>
+            </div>
+            <div class="stack-actions">
+              <button id="undo-btn" type="button" class="secondary-btn">Son Elemani Sil</button>
+              <button id="reset-btn" type="button" class="secondary-btn">Her seyi Sifirla</button>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h2>6. JSON</h2>
+            <div class="stack-actions">
+              <button id="copy-json-btn" type="button">JSON Kopyala</button>
+              <button id="download-json-btn" type="button" class="secondary-btn">JSON Indir</button>
+            </div>
+            <textarea id="json-output" class="json-output" spellcheck="false"></textarea>
+          </div>
+        </aside>
+
+        <section class="inspector-stage-panel">
+          <div class="stage-toolbar">
+            <p class="helper">
+              Ipuclari: Once buyuk cerceveyi ciz. Sonra kutulari tek tek ekle. Cizgiler icin iki nokta secimi yap.
+            </p>
+          </div>
+
+          <div id="stage-wrap" class="stage-wrap">
+            <div id="empty-stage" class="empty-stage">Gorsel yuklendikten sonra burada calisacaksin.</div>
+            <div id="stage" class="stage hidden">
+              <img id="stage-image" alt="Template referansi" />
+              <svg id="stage-overlay" class="stage-overlay"></svg>
+              <div id="draft-rect" class="draft-rect hidden"></div>
+              <div id="line-anchor" class="line-anchor hidden"></div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script type="module" src="/template-inspector.js"></script>
+  </body>
+</html>

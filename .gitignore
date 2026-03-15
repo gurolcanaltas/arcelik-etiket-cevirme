@@ -1,0 +1,22 @@
+node_modules/
+output/
+tmp/pdfs/*
+!tmp/pdfs/.gitkeep
+tmp/pdfs/**/*.pdf
+tmp/pdfs/**/*.json
+tmp/pdfs/**/*.png
+tmp/pdfs/**/*.txt
+tools/python311/
+tools/python311.zip
+tools/__pycache__/
+server.out.log
+server.err.log
+server.combined.log
+sample.pdf
+sample-9252-MI.pdf
+updated.pdf
+payload.json
+Unofficial API Denemesi/
+Normal To Parolu SVG.ai
+Oliz EPS.eps
+Oliz.svg
